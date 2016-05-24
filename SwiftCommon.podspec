@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 Swift extensions and helpers for __ANY__ OS.  Collections, Strings etc.
                    DESC
 
-  s.homepage     = "http://bitbucket.org/NullPlague/SwiftCommon"
+  s.homepage     = "https://bitbucket.org/NullPlague/swiftcommon"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,7 +39,7 @@ Swift extensions and helpers for __ANY__ OS.  Collections, Strings etc.
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = { :type => "MIT" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -64,7 +64,7 @@ Swift extensions and helpers for __ANY__ OS.  Collections, Strings etc.
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -90,7 +90,7 @@ Swift extensions and helpers for __ANY__ OS.  Collections, Strings etc.
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{swift}"
+  s.source_files  = "Classes", "SwiftCommon/**/*.{swift}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
