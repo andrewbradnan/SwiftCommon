@@ -7,12 +7,12 @@
  - Copyright: © 2016 Belkin International. All rights reserved.
 */
 
-typealias Block = () -> Void
+public typealias Block = () -> Void
 
-func secondsFromNow(secs: Double) -> dispatch_time_t {
+public func secondsFromNow(secs: Double) -> dispatch_time_t {
     return dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), Int64(secs * Double(NSEC_PER_SEC)))
 }
 
-func dispatch_after(secs: Double, block: Block) {
+public func dispatch_after(secs: Double, block: Block) {
     dispatch_after(secondsFromNow(secs), dispatch_get_main_queue(), block)
 }

@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   
   # only because we are using frameworks
   s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://bitbucket.org/NullPlague/swiftcommon.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://bitbucket.org/NullPlague/swiftcommon.git", :tag => s.version }
   s.source_files  = "Classes", "SwiftCommon/**/*.{swift}"
 end
