@@ -10,7 +10,6 @@
 		05C360851CF3D7D60017533B /* SwiftCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C360841CF3D7D60017533B /* SwiftCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05C3608C1CF3D7D60017533B /* SwiftCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C360811CF3D7D60017533B /* SwiftCommon.framework */; };
 		05C360911CF3D7D60017533B /* SwiftCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C360901CF3D7D60017533B /* SwiftCommonTests.swift */; };
-		05C3609C1CF3D9D00017533B /* UIApplication-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3609B1CF3D9D00017533B /* UIApplication-Extension.swift */; };
 		05C3609E1CF3DAA30017533B /* CGSize-Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3609D1CF3DAA30017533B /* CGSize-Extenstion.swift */; };
 		05C360A01CF4B77A0017533B /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3609F1CF4B77A0017533B /* Dispatch.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,6 @@
 		05C3608B1CF3D7D60017533B /* SwiftCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C360901CF3D7D60017533B /* SwiftCommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCommonTests.swift; sourceTree = "<group>"; };
 		05C360921CF3D7D60017533B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05C3609B1CF3D9D00017533B /* UIApplication-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication-Extension.swift"; sourceTree = "<group>"; };
 		05C3609D1CF3DAA30017533B /* CGSize-Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize-Extenstion.swift"; sourceTree = "<group>"; };
 		05C3609F1CF4B77A0017533B /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,7 +77,6 @@
 			children = (
 				05C360841CF3D7D60017533B /* SwiftCommon.h */,
 				05C360861CF3D7D60017533B /* Info.plist */,
-				05C3609B1CF3D9D00017533B /* UIApplication-Extension.swift */,
 				05C3609D1CF3DAA30017533B /* CGSize-Extenstion.swift */,
 				05C3609F1CF4B77A0017533B /* Dispatch.swift */,
 			);
@@ -204,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				05C360A01CF4B77A0017533B /* Dispatch.swift in Sources */,
-				05C3609C1CF3D9D00017533B /* UIApplication-Extension.swift in Sources */,
 				05C3609E1CF3DAA30017533B /* CGSize-Extenstion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
