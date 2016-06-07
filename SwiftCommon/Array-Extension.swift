@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension Array {
+extension SequenceType {
     /**
      Find the index of element using a predicate
      
@@ -26,7 +26,7 @@ extension Array {
     }
 }
 
-extension Array where Element : Equatable {
+extension SequenceType where Generator.Element : Equatable {
     
     /**
      Find the index of Equatable element.
