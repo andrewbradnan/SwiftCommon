@@ -16,7 +16,7 @@ extension SequenceType {
      - Parameter predicate: This Element?
      - Returns: Index or .None
     */
-    public func indexOf(predicate: Element -> Bool) -> Int? {
+    public func indexOf(predicate: Generator.Element -> Bool) -> Int? {
         for (idx, element) in self.enumerate() {
             if predicate(element) {
                 return idx
@@ -34,7 +34,7 @@ extension SequenceType where Generator.Element : Equatable {
      - Parameter e: The element to search for
      - Returns: Index or .None
      */
-    public func indexOf(e: Element) -> Int? {
+    public func indexOf(e: Generator.Element) -> Int? {
         for (idx, element) in self.enumerate() {
             if element == e {
                 return idx
@@ -49,7 +49,7 @@ extension SequenceType where Generator.Element : Equatable {
      - Parameter e: The element to search for
      - Returns: `true` or `false`
      */
-    public mutating func remove(e: Element) -> Bool {
+    public mutating func remove(e: Generator.Element) -> Bool {
         if let idx = self.indexOf(e) {
             self.removeAtIndex(idx)
             return true
