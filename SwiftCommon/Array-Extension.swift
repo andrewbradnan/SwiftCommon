@@ -47,14 +47,9 @@ extension SequenceType where Generator.Element : Equatable {
      Remove the Equatable element.
      
      - Parameter e: The element to search for
-     - Returns: `true` or `false`
+     - Returns: new array minus the element
      */
-    public mutating func remove(e: Generator.Element) -> Bool {
-        if let idx = self.indexOf(e) {
-            self.removeAtIndex(idx)
-            return true
-        }
-        return false
+    public func remove(e: Generator.Element) ->  [Self.Generator.Element] {
+        return self.filter { e != $0 }
     }
-    
 }
