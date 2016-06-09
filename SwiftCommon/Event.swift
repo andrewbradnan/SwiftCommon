@@ -31,7 +31,7 @@ public class Event<T> {
     var triggerType: EventTriggerType
     var param: T!
     
-    init (manual: Bool = false) {
+    public init (manual: Bool = false) {
         self.triggerType = .Manual(false)
     }
     
