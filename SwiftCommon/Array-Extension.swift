@@ -49,7 +49,7 @@ extension SequenceType where Generator.Element : Equatable {
      - Parameter e: The element to search for
      - Returns: new array minus the element
      */
-    public func remove(e: Generator.Element) -> SequenceType {
+    public func remove(e: Generator.Element) ->  [Self.Generator.Element] {
         return self.filter { e != $0 }
     }
 }
