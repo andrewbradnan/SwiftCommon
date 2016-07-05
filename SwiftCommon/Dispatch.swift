@@ -22,3 +22,18 @@ public func secondsFromNow(secs: Double) -> dispatch_time_t {
 public func dispatch_after(secs: Double, block: Block) {
     dispatch_after(secondsFromNow(secs), dispatch_get_main_queue(), block)
 }
+
+/**
+ Be sure and run on the main UI thread.and
+ 
+ - Parameter block: the code to run.
+ */
+public func gui(block: Block) {
+    if NSThread.isMainThread() {
+        block()
+    } else {
+        dispatch_async(dispatch_get_main_queue()) {
+            block()
+        }
+    }
+}
