@@ -75,4 +75,9 @@ extension String {
     public func substring(r: NSRange) -> String {
         return self.substring(r.location, end: r.location + r.length)
     }
+    
+    /// is not nil or emtpy
+    static func isNotEmpty(s: String?) -> Bool {
+        return !(s?.isEmpty ?? true)
+    }
 }

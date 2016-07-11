@@ -68,9 +68,9 @@ public struct EventLifeCycle : OptionSetType {
     public let rawValue: Int
     public init(rawValue: Int) { self.rawValue = rawValue }
     
-    static let Permanent = EventLifeCycle(rawValue: 1)
-    static let FireOnce = EventLifeCycle(rawValue: 2)
-    static let Skipable = EventLifeCycle(rawValue: 4)
+    public static let Permanent = EventLifeCycle(rawValue: 1)
+    public static let FireOnce = EventLifeCycle(rawValue: 2)
+    public static let Skipable = EventLifeCycle(rawValue: 4)
 }
 
 protocol EventType {
