@@ -90,4 +90,22 @@ extension String {
         }
         return result
     }
+    
+    /// find the last char
+    public func lastIndexOf(c: Character) -> Index? {
+        if let r: Range<Index> = self.rangeOfString(String(c), options: .BackwardsSearch) {
+            return r.startIndex
+        }
+        
+        return nil
+    }
+    
+    // return a filename
+    public var pathFileName: String? {
+        if let idx = self.lastIndexOf("/") {
+            return self.substringFromIndex(idx.advancedBy(1))
+        }
+        return nil
+    }
+
 }
