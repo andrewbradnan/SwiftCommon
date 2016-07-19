@@ -80,4 +80,14 @@ extension String {
     static func isNotEmpty(s: String?) -> Bool {
         return !(s?.isEmpty ?? true)
     }
+
+    /// return array of strings of every 2 chars
+    var pairs: [String] {
+        var result: [String] = []
+        let chars = Array(characters)
+        for index in 0.stride(to: chars.count, by: 2) {
+            result.append(String(chars[index..<min(index+2, chars.count)]))
+        }
+        return result
+    }
 }
