@@ -82,7 +82,7 @@ extension String {
     }
 
     /// return array of strings of every 2 chars
-    var pairs: [String] {
+    public var pairs: [String] {
         var result: [String] = []
         let chars = Array(characters)
         for index in 0.stride(to: chars.count, by: 2) {
