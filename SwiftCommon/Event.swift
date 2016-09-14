@@ -26,7 +26,7 @@ import Foundation
  ```
  */
 public class Event<T> {
-    public typealias EventBlock = T->Void
+    public typealias EventBlock = (T)->Void
     var events : [LambdaCallback<T>] = []
     var triggerType: EventTriggerType
     var param: T!
@@ -40,7 +40,7 @@ public class Event<T> {
     }
     
     public func append(dbg: String, life: EventLifeCycle, block: EventBlock) {
-        if case .Manual(let eventSet) = self.triggerType, eventSet == true {
+        if case .Manual(let eventSet) = self.triggerType && eventSet == true {
             block(self.param)
             
             // if we aren't FireOnce, then add to the list of events
@@ -64,7 +64,7 @@ public class Event<T> {
     }
 }
 
-public struct EventLifeCycle : OptionSetType {
+public struct EventLifeCycle : OptionSet {
     public let rawValue: Int
     public init(rawValue: Int) { self.rawValue = rawValue }
     
