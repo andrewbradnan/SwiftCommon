@@ -40,7 +40,7 @@ public class Event<T> {
     }
     
     public func append(dbg: String, life: EventLifeCycle, block: EventBlock) {
-        if case .Manual(let eventSet) = self.triggerType where eventSet == true {
+        if case .Manual(let eventSet) = self.triggerType, eventSet == true {
             block(self.param)
             
             // if we aren't FireOnce, then add to the list of events
@@ -82,7 +82,7 @@ extension EventType {
     var isSkipable: Bool { get { return self.lifeCycle.contains(.Skipable) }}
 }
 
-func notify<C: CollectionType where C.Generator.Element : EventType>(events: C, ffwd: Bool, inout fired: Bool, fire: C.Generator.Element->Void) -> [C.Generator.Element] {
+func notify<C: CollectionType>(events: C, ffwd: Bool, fired: inout Bool, fire: C.Generator.Element->Void) -> [C.Generator.Element] where C.Generator.Element : EventType {
     var rt: [C.Generator.Element] = []
     fired = false
     

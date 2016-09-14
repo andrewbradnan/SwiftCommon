@@ -12,6 +12,6 @@ import Foundation
 extension CGSize {
     /// Swap height & width
     public func swap() -> CGSize {
-        return CGSizeMake(self.height, self.width)
+        return CGSize(self.height, self.width)
     }
 }
