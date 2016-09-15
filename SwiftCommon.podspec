@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftCommon"
-  s.version      = "0.0.15"
+  s.version      = "1.0.0"
   s.summary      = "Common Swift extensions and helpers."
   s.description  = <<-DESC
     Swift extensions and helpers for __ANY__ OS.  Collections, Strings etc.
@@ -16,4 +16,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/phyngit/SwiftCommon.git", :tag => s.version }
   s.source_files  = "Classes", "SwiftCommon/**/*.{swift}"
+  s.pod_target_xcconfig = {
+    'SWIFT_VERSION' => '3.0'
+  }
+
 end
