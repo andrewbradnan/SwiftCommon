@@ -36,19 +36,19 @@ public class Event<T> {
     }
     
     func removeAll(keepCapacity: Bool) {
-        events.removeAll(keepCapacity: false)
+        events.removeAll(keepingCapacity: false)
     }
     
-    public func append(dbg: String, life: EventLifeCycle, block: EventBlock) {
-        if case .Manual(let eventSet) = self.triggerType && eventSet == true {
+    public func append(dbg: String, life: EventLifeCycle, block: @escaping EventBlock) {
+        switch self.triggerType {
+        case .Manual(let eventSet) where eventSet == true:
             block(self.param)
             
             // if we aren't FireOnce, then add to the list of events
             if !life.contains(.FireOnce) {
                 events.append(LambdaCallback<T>(dbg: dbg, block: block, life: life))
             }
-        }
-        else {
+        default:
             events.append(LambdaCallback<T>(dbg: dbg, block: block, life: life))
         }
     }
@@ -60,7 +60,7 @@ public class Event<T> {
         }
         
         var fired: Bool = false
-        self.events = notify(self.events, ffwd: false, fired: &fired, fire: { $0.fire(param) })
+        self.events = notify(self.events, ffwd: false, fired: &fired, fire: { $0.fire(param: param) })
     }
 }
 
@@ -82,7 +82,7 @@ extension EventType {
     var isSkipable: Bool { get { return self.lifeCycle.contains(.Skipable) }}
 }
 
-func notify<C: CollectionType>(events: C, ffwd: Bool, fired: inout Bool, fire: C.Generator.Element->Void) -> [C.Generator.Element] where C.Generator.Element : EventType {
+func notify<C: Collection>(_ events: C, ffwd: Bool, fired: inout Bool, fire: (C.Iterator.Element)->Void) -> [C.Iterator.Element] where C.Iterator.Element : EventType {
     var rt: [C.Generator.Element] = []
     fired = false
     
@@ -104,11 +104,11 @@ protocol EventParamType : EventType {
 }
 
 class LambdaCallback<T> : EventParamType {
-    let block : T->Void
+    let block : (T)->Void
     let lifeCycle : EventLifeCycle
     
     internal let dbg: String
-    init(dbg: String, block: T->Void, life: EventLifeCycle)
+    init(dbg: String, block: @escaping (T)->Void, life: EventLifeCycle)
     {
         self.dbg = dbg
         self.block = block

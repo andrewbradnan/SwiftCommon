@@ -9,12 +9,10 @@
 
 import Foundation
 
-extension NSURL {
-    func ensureTrailingSlash() -> NSURL {
-        if let p = self.path {
-            if p.length > 0 && !self.absoluteString!.hasSuffix("/") {
-                return self.URLByAppendingPathComponent("")!
-            }
+extension URL {
+    func ensureTrailingSlash() -> URL {
+        if self.path.length > 0 && !self.absoluteString.hasSuffix("/") {
+            return self.appendingPathComponent("") //   URLByAppendingPathComponent("")!
         }
         return self
     }
