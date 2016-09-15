@@ -9,8 +9,10 @@
 
 public typealias Block = () -> Void
 
-public func secondsFromNow(secs: Double) -> dispatch_time_t {
-    return dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), Int64(secs * Double(NSEC_PER_SEC)))
+public func secondsFromNow(_ secs: Double) -> DispatchTime {
+    let nanos = DispatchTime.now().rawValue + UInt64(secs * Double(NSEC_PER_SEC))
+    
+    return DispatchTime(uptimeNanoseconds: nanos)
 }
 
 /**
@@ -19,8 +21,8 @@ public func secondsFromNow(secs: Double) -> dispatch_time_t {
  - Parameter secs: seconds from now.
  - Parameter block: closure to run.
  */
-public func dispatch_after(secs: Double, block: Block) {
-    dispatch_after(secondsFromNow(secs), dispatch_get_main_queue(), block)
+public func dispatch_after(_ secs: Double, block: @escaping Block) {
+    DispatchQueue.main.asyncAfter(deadline: secondsFromNow(secs), execute: block)
 }
 
 /**
@@ -28,11 +30,11 @@ public func dispatch_after(secs: Double, block: Block) {
  
  - Parameter block: the code to run.
  */
-public func gui(block: Block) {
-    if NSThread.isMainThread() {
+public func gui(_ block: @escaping Block) {
+    if Thread.isMainThread {
         block()
     } else {
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             block()
         }
     }

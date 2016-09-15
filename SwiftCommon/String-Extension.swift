@@ -20,13 +20,13 @@ extension String {
     println(aString.stripCharacters(chars))
     '''
     */
-    public func stripCharacters(chars: Set<Character>) -> String {
+    public func stripCharacters(_ chars: Set<Character>) -> String {
         return String(self.characters.filter({ !chars.contains($0)}))
     }
     
     /// indexOf(ch)
-    public func indexOf(char: Character) -> String.Index? {
-        return self.characters.indexOf(char)
+    public func indexOf(_ char: Character) -> String.Index? {
+        return self.characters.index(of: char)
     }
     
     // spit out the string in ascii.  not sure how to make hex, it's decimal atm.
@@ -52,11 +52,11 @@ extension String {
     public var allBytes: NSRange { get { return NSMakeRange(0, self.countBytes) } }
     
     /// search and replace using regex
-    public func searchReplace(search: String, replace: String, options: NSRegularExpressionOptions = .CaseInsensitive) -> String {
+    public func searchReplace(_ search: String, replace: String, options: NSRegularExpression.Options = .caseInsensitive) -> String {
         do {
             let expr = try NSRegularExpression(pattern: search, options: options)
             
-            let replacement = expr.stringByReplacingMatchesInString(self, options: NSMatchingOptions(), range: self.allBytes, withTemplate: replace)
+            let replacement = expr.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(), range: self.allBytes, withTemplate: replace)
             
             return replacement
         }
@@ -66,18 +66,18 @@ extension String {
     }
     
     /// get a substring the normal way
-    public func substring(start: Int, end: Int) -> String {
-        let r = self.startIndex.advancedBy(start)..<self.startIndex.advancedBy(end)
-        return self.substringWithRange(r)
+    public func substring(_ start: Int, end: Int) -> String {
+        let r = self.characters.index(self.startIndex, offsetBy: start)..<self.characters.index(self.startIndex, offsetBy: end)
+        return self.substring(with: r)
     }
     
     /// get a substring using a NSRange
-    public func substring(r: NSRange) -> String {
+    public func substring(_ r: NSRange) -> String {
         return self.substring(r.location, end: r.location + r.length)
     }
     
     /// is not nil or emtpy
-    static func isNotEmpty(s: String?) -> Bool {
+    static func isNotEmpty(_ s: String?) -> Bool {
         return !(s?.isEmpty ?? true)
     }
 
@@ -85,16 +85,16 @@ extension String {
     public var pairs: [String] {
         var result: [String] = []
         let chars = Array(characters)
-        for index in 0.stride(to: chars.count, by: 2) {
+        for index in stride(from: 0, to: chars.count, by: 2) {
             result.append(String(chars[index..<min(index+2, chars.count)]))
         }
         return result
     }
     
     /// find the last char
-    public func lastIndexOf(c: Character) -> Index? {
-        if let r: Range<Index> = self.rangeOfString(String(c), options: .BackwardsSearch) {
-            return r.startIndex
+    public func lastIndexOf(_ c: Character) -> Index? {
+        if let r: Range<Index> = self.range(of: String(c), options: .backwards) {
+            return r.lowerBound
         }
         
         return nil
@@ -103,7 +103,7 @@ extension String {
     // return a filename
     public var pathFileName: String? {
         if let idx = self.lastIndexOf("/") {
-            return self.substringFromIndex(idx.advancedBy(1))
+            return self.substring(from: self.index(after: idx))
         }
         return nil
     }

@@ -9,6 +9,9 @@
 
 import Foundation
 
+//func foo<T:Sequence>() {
+//    
+//}
 extension Sequence {
     /**
      Find the index of element using a predicate
@@ -16,8 +19,8 @@ extension Sequence {
      - Parameter predicate: This Element?
      - Returns: Index or .None
     */
-    public func indexOf(predicate: Generator.Element -> Bool) -> Int? {
-        for (idx, element) in self.enumerate() {
+    public func indexOf(_ predicate: (Self.Iterator.Element) -> Bool) -> Int? {
+        for (idx, element) in self.enumerated() {
             if predicate(element) {
                 return idx
             }
@@ -26,7 +29,7 @@ extension Sequence {
     }
 }
 
-extension Sequence where Generator.Element : Equatable {
+extension Sequence where Iterator.Element : Equatable {
     
     /**
      Find the index of Equatable element.
@@ -34,8 +37,8 @@ extension Sequence where Generator.Element : Equatable {
      - Parameter e: The element to search for
      - Returns: Index or .None
      */
-    public func indexOf(e: Generator.Element) -> Int? {
-        for (idx, element) in self.enumerate() {
+    public func indexOf(_ e: Iterator.Element) -> Int? {
+        for (idx, element) in self.enumerated() {
             if element == e {
                 return idx
             }
@@ -49,7 +52,7 @@ extension Sequence where Generator.Element : Equatable {
      - Parameter e: The element to search for
      - Returns: new array minus the element
      */
-    public func remove(e: Generator.Element) ->  [Self.Generator.Element] {
+    public func remove(_ e: Iterator.Element) ->  [Self.Iterator.Element] {
         return self.filter { e != $0 }
     }
 }

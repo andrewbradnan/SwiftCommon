@@ -7,8 +7,10 @@
 
 import Foundation
 
-extension NSDate {
-    public func hoursFrom(date:NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.Hour, fromDate: date, toDate: self, options: NSCalendarOptions()).hour
+extension Date {
+    public func hoursFrom(_ date:Date) -> Int {
+        let c = Calendar.current
+        
+        return c.dateComponents([Calendar.Component.hour], from: date, to: self).hour!
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0557539C1CF6165300B4BDFB /* String-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557539B1CF6165300B4BDFB /* String-Extension.swift */; };
 		0557539E1CF61C0200B4BDFB /* SwiftCommon.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0557539D1CF61C0200B4BDFB /* SwiftCommon.podspec */; };
-		055753A11CF61C1200B4BDFB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0557539F1CF61C1200B4BDFB /* README.md */; };
 		05C360851CF3D7D60017533B /* SwiftCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C360841CF3D7D60017533B /* SwiftCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05C3608C1CF3D7D60017533B /* SwiftCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C360811CF3D7D60017533B /* SwiftCommon.framework */; };
 		05C360911CF3D7D60017533B /* SwiftCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C360901CF3D7D60017533B /* SwiftCommonTests.swift */; };
@@ -175,14 +174,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Belkin;
 				TargetAttributes = {
 					05C360801CF3D7D60017533B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					05C3608A1CF3D7D60017533B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -230,7 +231,6 @@
 				05C360CD1CF4FD6D0017533B /* NSDate-Extension.swift in Sources */,
 				05C360C81CF4FA480017533B /* Array-Extension.swift in Sources */,
 				0557539C1CF6165300B4BDFB /* String-Extension.swift in Sources */,
-				055753A11CF61C1200B4BDFB /* README.md in Sources */,
 				05C360A01CF4B77A0017533B /* Dispatch.swift in Sources */,
 				05C3609E1CF3DAA30017533B /* CGSize-Extenstion.swift in Sources */,
 				05C360CB1CF4FB5F0017533B /* CGRect-Extension.swift in Sources */,
@@ -270,8 +270,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -319,8 +321,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -340,6 +344,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -351,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -362,6 +368,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -369,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -379,6 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.belkin.SwiftCommon.SwiftCommon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -389,6 +398,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belkin.SwiftCommon.SwiftCommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -399,6 +409,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belkin.SwiftCommon.SwiftCommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
