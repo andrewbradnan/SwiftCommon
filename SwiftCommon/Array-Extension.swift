@@ -1,17 +1,14 @@
 /**
  # Array-Extension.swift
- ##  SwiftCommon
+## SwiftCommon
  
  - Author: Andrew Bradnan
  - Date: 5/24/16
- - Copyright:   Copyright © 2016 Belkin. All rights reserved.
+ - Copyright: © 2016 Whirlygig Ventures.  All rights reserved.
  */
 
 import Foundation
 
-//func foo<T:Sequence>() {
-//    
-//}
 extension Sequence {
     /**
      Find the index of element using a predicate

@@ -1,8 +1,8 @@
 /**
- # NSDate-Extension.swift
+ # Date-Extension.swift
 ## SwiftCommon
  
- - Copyright:   Copyright © 2016 Belkin. All rights reserved.
+ - Copyright: © 2016 Whirlygig Ventures. All rights reserved.
  */
 
 import Foundation

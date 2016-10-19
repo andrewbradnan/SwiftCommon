@@ -1,17 +1,7 @@
 /**
  # Event.swift
  ## SwiftCommon
- 
- - Author: Andrew Bradnan
- - Date: 6/7/16
- - Copyright:
- */
 
-import Foundation
-
-/**
- ## Event
- 
  This is basically a C# event.  Delegates can only call back one sink.  This will mux.
  
  - Parameter T: the type of event to fire
@@ -24,7 +14,13 @@ import Foundation
  // source
  mouseClick.fire(location)
  ```
- */
+ - Author: Andrew Bradnan
+ - Date: 6/7/16
+ - Copyright: © 2016 Whirlygig Ventures.  All rights reserved.
+*/
+
+import Foundation
+
 public class Event<T> {
     public typealias EventBlock = (T)->Void
     var events : [LambdaCallback<T>] = []

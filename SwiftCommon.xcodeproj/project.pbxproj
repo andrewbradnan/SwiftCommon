@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0505A82C1D8A277E002231D1 /* NSURL-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505A8291D8A277E002231D1 /* NSURL-Extension.swift */; };
+		0505A82C1D8A277E002231D1 /* URL-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505A8291D8A277E002231D1 /* URL-Extension.swift */; };
 		0505A82D1D8A277E002231D1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505A82A1D8A277E002231D1 /* Event.swift */; };
 		0505A82E1D8A277E002231D1 /* Bool-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505A82B1D8A277E002231D1 /* Bool-Extension.swift */; };
 		0557539C1CF6165300B4BDFB /* String-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557539B1CF6165300B4BDFB /* String-Extension.swift */; };
@@ -19,7 +19,7 @@
 		05C360A01CF4B77A0017533B /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3609F1CF4B77A0017533B /* Dispatch.swift */; };
 		05C360C81CF4FA480017533B /* Array-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C360C71CF4FA480017533B /* Array-Extension.swift */; };
 		05C360CB1CF4FB5F0017533B /* CGRect-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C360CA1CF4FB5F0017533B /* CGRect-Extension.swift */; };
-		05C360CD1CF4FD6D0017533B /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C360CC1CF4FD6D0017533B /* NSDate-Extension.swift */; };
+		05C360CD1CF4FD6D0017533B /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C360CC1CF4FD6D0017533B /* Date-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0505A8291D8A277E002231D1 /* NSURL-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL-Extension.swift"; path = "SwiftCommon/NSURL-Extension.swift"; sourceTree = "<group>"; };
-		0505A82A1D8A277E002231D1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = SwiftCommon/Event.swift; sourceTree = "<group>"; };
-		0505A82B1D8A277E002231D1 /* Bool-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bool-Extension.swift"; path = "SwiftCommon/Bool-Extension.swift"; sourceTree = "<group>"; };
+		0505A8291D8A277E002231D1 /* URL-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL-Extension.swift"; sourceTree = "<group>"; };
+		0505A82A1D8A277E002231D1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0505A82B1D8A277E002231D1 /* Bool-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool-Extension.swift"; sourceTree = "<group>"; };
 		0557539B1CF6165300B4BDFB /* String-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extension.swift"; sourceTree = "<group>"; };
 		0557539D1CF61C0200B4BDFB /* SwiftCommon.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftCommon.podspec; sourceTree = "<group>"; };
 		0557539F1CF61C1200B4BDFB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		05C3609F1CF4B77A0017533B /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		05C360C71CF4FA480017533B /* Array-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array-Extension.swift"; sourceTree = "<group>"; };
 		05C360CA1CF4FB5F0017533B /* CGRect-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect-Extension.swift"; sourceTree = "<group>"; };
-		05C360CC1CF4FD6D0017533B /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		05C360CC1CF4FD6D0017533B /* Date-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +74,6 @@
 		05C360771CF3D7D60017533B = {
 			isa = PBXGroup;
 			children = (
-				0505A8291D8A277E002231D1 /* NSURL-Extension.swift */,
-				0505A82A1D8A277E002231D1 /* Event.swift */,
-				0505A82B1D8A277E002231D1 /* Bool-Extension.swift */,
 				05C360831CF3D7D60017533B /* SwiftCommon */,
 				05C3608F1CF3D7D60017533B /* SwiftCommonTests */,
 				05C360821CF3D7D60017533B /* Products */,
@@ -99,11 +96,14 @@
 				0557539D1CF61C0200B4BDFB /* SwiftCommon.podspec */,
 				05C360C91CF4FAE60017533B /* Support Files */,
 				05C360C71CF4FA480017533B /* Array-Extension.swift */,
+				0505A82B1D8A277E002231D1 /* Bool-Extension.swift */,
 				05C360CA1CF4FB5F0017533B /* CGRect-Extension.swift */,
 				05C3609D1CF3DAA30017533B /* CGSize-Extenstion.swift */,
+				05C360CC1CF4FD6D0017533B /* Date-Extension.swift */,
 				05C3609F1CF4B77A0017533B /* Dispatch.swift */,
-				05C360CC1CF4FD6D0017533B /* NSDate-Extension.swift */,
+				0505A82A1D8A277E002231D1 /* Event.swift */,
 				0557539B1CF6165300B4BDFB /* String-Extension.swift */,
+				0505A8291D8A277E002231D1 /* URL-Extension.swift */,
 			);
 			path = SwiftCommon;
 			sourceTree = "<group>";
@@ -239,9 +239,9 @@
 			files = (
 				0505A82E1D8A277E002231D1 /* Bool-Extension.swift in Sources */,
 				0505A82D1D8A277E002231D1 /* Event.swift in Sources */,
-				05C360CD1CF4FD6D0017533B /* NSDate-Extension.swift in Sources */,
+				05C360CD1CF4FD6D0017533B /* Date-Extension.swift in Sources */,
 				05C360C81CF4FA480017533B /* Array-Extension.swift in Sources */,
-				0505A82C1D8A277E002231D1 /* NSURL-Extension.swift in Sources */,
+				0505A82C1D8A277E002231D1 /* URL-Extension.swift in Sources */,
 				0557539C1CF6165300B4BDFB /* String-Extension.swift in Sources */,
 				05C360A01CF4B77A0017533B /* Dispatch.swift in Sources */,
 				05C3609E1CF3DAA30017533B /* CGSize-Extenstion.swift in Sources */,

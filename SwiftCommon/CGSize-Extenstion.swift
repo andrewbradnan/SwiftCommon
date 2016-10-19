@@ -4,7 +4,7 @@
  
  - Author: Andrew Bradnan
  - Date: 5/23/16
- - Copyright: © 2016 Belkin International. All rights reserved.
+ - Copyright: © 2016 Whirlygig Ventures.  All rights reserved.
  */
 
 import Foundation

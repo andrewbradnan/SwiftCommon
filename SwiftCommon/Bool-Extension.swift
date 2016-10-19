@@ -4,7 +4,7 @@
  
  - Author: Andrew Bradnan
  - Date: 8/24/16
- - Copyright: 
+ - Copyright: © 2016 Whirlygig Ventures.  All rights reserved.
  */
 
 extension Bool {
