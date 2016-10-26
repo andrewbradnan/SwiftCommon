@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/andrewbradnan/swiftcommon"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = "Andrew Bradnan"
+  s.author       = "Andrew Bradnan"
   
   # only because we are using frameworks
   s.platform     = :ios, "8.0"
