@@ -40,6 +40,14 @@ extension String {
         return rt
     }
     
+    /**
+     Encode a String to Base64
+     */
+    func toBase64() -> String {
+        let data = self.dataUsingEncoding(NSUTF8StringEncoding)
+        return data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+    }
+    
     /// byte length
     public var countBytes: Int { return self.unicodeScalars.count }
     
