@@ -41,7 +41,7 @@ public class Event<T> {
         }
     }
     
-    func removeAll(keepCapacity: Bool) {
+    public func removeAll(keepCapacity: Bool) {
         events.removeAll(keepCapacity: false)
     }
     
