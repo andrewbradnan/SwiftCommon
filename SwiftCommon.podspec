@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftCommon"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Common Swift extensions and helpers."
   s.description  = <<-DESC
     Swift extensions and helpers for __ANY__ OS.  Collections, Strings etc.

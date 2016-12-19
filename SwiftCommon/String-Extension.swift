@@ -72,6 +72,19 @@ extension String {
             return self
         }
     }
+
+    public func numberOfMatches(search: String, options: NSRegularExpressionOptions = .CaseInsensitive) -> Int {
+        do {
+            let expr = try NSRegularExpression(pattern: search, options: options)
+            
+            let matches = expr.numberOfMatchesInString(self, options: NSMatchingOptions(), range: self.allBytes)
+            
+            return matches
+        }
+        catch {
+            return 0
+        }
+    }
     
     /// get a substring the normal way
     public func substring(start: Int, end: Int) -> String {

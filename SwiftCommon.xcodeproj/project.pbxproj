@@ -11,7 +11,6 @@
 		0518230C1DC1322900E4D1B0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051823091DC1322900E4D1B0 /* Event.swift */; };
 		0518230D1DC1322900E4D1B0 /* NSURL-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518230A1DC1322900E4D1B0 /* NSURL-Extension.swift */; };
 		0557539C1CF6165300B4BDFB /* String-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557539B1CF6165300B4BDFB /* String-Extension.swift */; };
-		0557539E1CF61C0200B4BDFB /* SwiftCommon.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0557539D1CF61C0200B4BDFB /* SwiftCommon.podspec */; };
 		055753A11CF61C1200B4BDFB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0557539F1CF61C1200B4BDFB /* README.md */; };
 		05C360851CF3D7D60017533B /* SwiftCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C360841CF3D7D60017533B /* SwiftCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05C3608C1CF3D7D60017533B /* SwiftCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C360811CF3D7D60017533B /* SwiftCommon.framework */; };
@@ -184,7 +183,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Belkin;
 				TargetAttributes = {
 					05C360801CF3D7D60017533B = {
@@ -218,7 +217,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0557539E1CF61C0200B4BDFB /* SwiftCommon.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +280,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -311,6 +311,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -331,8 +332,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -352,6 +355,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -363,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -381,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
