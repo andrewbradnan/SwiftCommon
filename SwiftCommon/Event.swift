@@ -31,8 +31,14 @@ public class Event<T> {
     var triggerType: EventTriggerType
     var param: T!
     
-    public init (manual: Bool = false) {
-        self.triggerType = .Manual(false)
+    /// default's to .Auto reset event
+    public init (manual: Bool? = nil) {
+        if let manual = manual {
+            self.triggerType = .Manual(manual)
+        }
+        else {
+            self.triggerType = .Auto
+        }
     }
     
     func removeAll(keepCapacity: Bool) {
